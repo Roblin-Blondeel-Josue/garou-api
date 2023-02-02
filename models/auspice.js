@@ -9,8 +9,8 @@ const Auspice = new Schema({
   },
   moon: {
     required: true,
+    unique: false,
     type: String,
-    unique: true,
   },
   bonus: {
     required: true,

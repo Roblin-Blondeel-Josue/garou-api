@@ -9,48 +9,61 @@ const Character = new Schema({
   code: {
     required: true,
     type: Number,
-    default: 69,
   },
   player: {
     required: true,
     type: String,
+    unique: false,
   },
   character: {
     required: true,
     type: String,
-    unique: true,
+    unique: false,
+  },
+  email: {
+    type: String,
+    unique: false,
+    required: false,
   },
   tribe: {
     required: true,
     type: String,
+    unique: false,
   },
   clan: {
     required: true,
     type: String,
+    unique: false,
   },
   pack: {
     required: true,
     type: String,
+    unique: false,
   },
   alliance: {
     required: true,
     type: String,
+    unique: false,
   },
   nature: {
     required: true,
     type: String,
+    unique: false,
   },
   attitude: {
     required: true,
     type: String,
+    unique: false,
   },
   gnose: {
     required: true,
     type: Number,
+    unique: false,
   },
   willpower: {
     required: true,
     type: Number,
+    unique: false,
   },
   auspice: {
     type: Auspice,
@@ -220,6 +233,14 @@ const Character = new Schema({
   },
   dons: {
     type: [Power, Power],
+    default: [],
+  },
+  rituels: {
+    type: [Power, Power, Power, Power, Power, Power],
+    default: [],
+  },
+  cry: {
+    type: [Power, Power, Power, Power, Power, Power],
     default: [],
   },
 });
