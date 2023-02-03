@@ -7,9 +7,9 @@ const setupRoutes = require("./routes/index");
 
 mongoose.set("strictQuery", false);
 
-const mongoString = process.env.DATABASE_URL;
+// const mongoString = process.env.DATABASE_URL;
 
-mongoose.connect(mongoString);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/garou-api");
 const database = mongoose.connection;
 
 database.on("error", (error) => {
@@ -33,8 +33,10 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 setupRoutes(app);
-app.listen(5000, () => {
-  console.log(`Server Started at ${5000}`);
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => {
+  console.log(`Server Started at ${port}`);
 });
 module.exports = app;
 module.exports = app;
