@@ -20,16 +20,12 @@ database.once("connected", () => {
   console.log("Database Connected");
 });
 const app = express();
-const corsOptions = {
-  origin: [
-    "https://garou-api.onrender.com/",
-    "https://character-in-pocket.vercel.app/",
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:5000",
-  ],
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+const corsOptions ={
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
+}
 
 app.use(cors(corsOptions));
 app.use(express.json());
