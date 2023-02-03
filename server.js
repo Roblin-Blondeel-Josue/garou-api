@@ -20,13 +20,27 @@ database.once("connected", () => {
   console.log("Database Connected");
 });
 const app = express();
-
-app.use(cors());
-app.use(express.json());
+const corsOptions = {
+  origin: [
+    "https://garou-the-api.vercel.app/",
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:5000",
+  ],
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 const routes = require("./routes/character");
 
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 app.use("/", routes);
 setupRoutes(app);
 app.listen(5000, () => {
   console.log(`Server Started at ${5000}`);
 });
+module.exports = app;
