@@ -23,6 +23,7 @@ const app = express();
 const corsOptions = {
   origin: [
     "https://garou-api.onrender.com/",
+    "https://character-in-pocket.vercel.app/",
     "http://localhost:3000",
     "http://localhost:3001",
     "http://localhost:5000",
