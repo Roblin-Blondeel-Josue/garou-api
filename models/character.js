@@ -152,6 +152,10 @@ const Character = new Schema({
     ],
     default: [],
   },
+  language: {
+    type: [Power, Power, Power, Power, Power],
+    default: [],
+  },
   legends: {
     type: [
       Power,
