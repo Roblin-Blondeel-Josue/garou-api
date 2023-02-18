@@ -91,7 +91,7 @@ const Character = new Schema({
     },
   },
   avantages: {
-    type: [Power, Power, Power, Power, Power, Power],
+    type: [Power, Power, Power, Power, Power, Power, Power, Power],
     default: [],
   },
   talents: {
