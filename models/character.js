@@ -239,8 +239,8 @@ const Character = new Schema({
     type: [Power, Power],
     default: [],
   },
-  rituels: {
-    type: [Power, Power, Power, Power, Power, Power],
+  rituals: {
+    type: [Power, Power, Power, Power, Power, Power, Power, Power],
     default: [],
   },
   cry: {
