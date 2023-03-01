@@ -247,6 +247,10 @@ const Character = new Schema({
     type: [Power, Power, Power, Power, Power, Power],
     default: [],
   },
+  bonusAuspice: {
+    type: Power,
+    default: {},
+  },
 });
 
 module.exports = Character;
